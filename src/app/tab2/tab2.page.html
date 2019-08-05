@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+        Matrize
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <br>
+  <ion-searchbar placeholder="Buscar Ordem" showCancelButton="focus" cancelButtonText="Cancelar"></ion-searchbar>
+
+<!-- List of Sliding Items -->
+<ion-list *ngFor="let item of lista">
+  <ion-item-sliding>
+    <ion-item button (click)="visualiza(item)">
+      <ion-avatar>
+          <img src="{{item.imagem}}">
+        </ion-avatar>
+        <ion-label style="margin-left:10px;">{{item.nome}}</ion-label>
+        <ion-badge *ngIf="!item.visualizado"  end color="success">Novo</ion-badge>
+    </ion-item>
+
+    <ion-item-options side="end">
+      <ion-item-option (click)="editePage(item)">
+          <ion-icon name="create"  start></ion-icon>
+
+      </ion-item-option>
+      <ion-item-option color="danger"  (click)="deletar(item)">
+          <ion-icon name="trash" ></ion-icon>
+      </ion-item-option>
+
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+  
+</ion-content>

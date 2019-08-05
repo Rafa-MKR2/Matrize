@@ -1,0 +1,7 @@
+{
+  "name": "Matrize",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
